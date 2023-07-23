@@ -1,7 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ItemOption.css";
 
 const ItemOption = () => {
+  let colors = [
+    {
+      id: 1,
+      color: "white",
+    },
+    {
+      id: 2,
+      color: "gray",
+    },
+    {
+      id: 3,
+      color: "black",
+    },
+  ];
+
+  let sizes = [
+    {
+      id: 1,
+      size: "XXS",
+    },
+    {
+      id: 2,
+      size: "XS",
+    },
+    {
+      id: 3,
+      size: "S",
+    },
+    {
+      id: 4,
+      size: "M",
+    },
+    {
+      id: 5,
+      size: "L",
+    },
+    {
+      id: 6,
+      size: "XL",
+    },
+    {
+      id: 7,
+      size: "2XL",
+    },
+    {
+      id: 8,
+      size: "3XL",
+    },
+  ];
+  let [selectedSize, setSelectedSize] = useState("");
+  let [selectedColor, setSelectedColor] = useState("");
+
+  const handleSizeClick = (size) => {
+    setSelectedSize(size);
+  };
+
+  const handleColorClick = (color) => {
+    setSelectedColor(color);
+  };
+
   return (
     <form className="item-option">
       <h2>$192</h2>
@@ -11,15 +71,18 @@ const ItemOption = () => {
       <div className="color">
         <h4>Color</h4>
         <div>
-          <a href="#!">
-            <span />
-          </a>
-          <a href="#!">
-            <span />
-          </a>
-          <a href="#!">
-            <span />
-          </a>
+          {colors.map((colors) => {
+            return (
+              <a
+                href="#!"
+                key={colors.id}
+                className={selectedColor === colors.color ? "selected" : ""}
+                onClick={() => handleColorClick(colors.color)}
+              >
+                <span />
+              </a>
+            );
+          })}
         </div>
       </div>
       <div className="size">
@@ -28,32 +91,15 @@ const ItemOption = () => {
           <a href="#!">Size guide</a>
         </div>
         <ul>
-          <li>
-            <a href="#!">XXS</a>
-          </li>
-          <li>
-            <a href="#!">XS</a>
-          </li>
-          <li>
-            <a href="#!">S</a>
-          </li>
-          <li>
-            <a href="#!">M</a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="#!">L</a>
-          </li>
-          <li>
-            <a href="#!">XL</a>
-          </li>
-          <li>
-            <a href="#!">2XL</a>
-          </li>
-          <li>
-            <a href="#!">3XL</a>
-          </li>
+          {sizes.map((sizes) => (
+            <li
+              key={sizes.id}
+              className={selectedSize === sizes.size ? "selected" : ""}
+              onClick={() => handleSizeClick(sizes.size)}
+            >
+              <a href="#!">{sizes.size}</a>
+            </li>
+          ))}
         </ul>
       </div>
       <button type="submit">Add to Cart</button>
