@@ -1,0 +1,86 @@
+.item-option {
+  width: 30%;
+  padding: 10px 15px;
+  text-align: left;
+}
+.item-option h2 {
+  font-size: 35px;
+  font-weight: normal;
+  margin: 15px 0;
+}
+.review span {
+  margin-left: 15px;
+  color: blueviolet;
+}
+.color {
+  margin: 30px 0;
+}
+.color a {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin: 10px 15px 0 0;
+  border-radius: 32px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  padding: 2px;
+}
+.color a span {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 26px;
+}
+.color a:first-child span {
+  background-color: white;
+}
+.color a:nth-child(2) span {
+  background-color: grey;
+}
+.color a:last-child span {
+  background-color: black;
+}
+.size div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.size div a {
+  text-decoration: none;
+  color: blueviolet;
+  font-weight: bold;
+  font-size: 0.8125rem;
+}
+.size ul {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.size li {
+  list-style: none;
+  width: 20%;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  text-align: center;
+  margin-top: 10px;
+}
+.size li a {
+  display: inline-block;
+  width: 100%;
+  padding: 15px 0;
+  text-decoration: none;
+  color: #333;
+}
+.item-option button {
+  width: 100%;
+  border-radius: 5px;
+  padding: 20px 0;
+  margin-top: 40px;
+  background-color: blueviolet;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,17 @@
+.header {
+  width: 100%;
+  display: flex;
+  padding: 10px 30px;
+  align-items: center;
+}
+
+.header p {
+  border-right: 1px solid #ccc;
+  padding: 0 20px;
+  font-weight: bold;
+}
+
+p.current-item {
+  font-weight: normal;
+  border-right: none;
+}
